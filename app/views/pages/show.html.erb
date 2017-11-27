@@ -1,0 +1,38 @@
+<h1>
+  <%= @page.title %>
+  -
+  Public: <%= @page.public ? 'Yes' : 'No' %>
+</h1>
+
+<blockquote>
+  <%= @page.content %>
+</blockquote>
+
+<br />
+
+<cite>
+  <%= @page.author %>
+</cite>
+
+<br />
+
+<i>
+  Created At: <%= @page.created_at %>
+</i>
+
+<br />
+
+<i>
+  Updated At: <%= @page.updated_at %>
+</i>
+
+<hr />
+
+<div class='action-buttons'>
+  <%= link_to 'Edit', edit_page_path(@page) %>
+  <%= link_to 'Delete', page_path(@page),
+          method: :delete,
+          data: { confirm: 'Really Delete?'}
+  %>
+  <%= link_to 'All Posts', pages_path %>
+</div>
